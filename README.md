@@ -9,6 +9,6 @@ Initially the concept was to create a mobile app that allowed users to search fo
 Now on to a new, if not related idea (being brainstormed now), that supports all this work being done. Making civic involvement more familiar and allowing ownership of it by anyone who wants to act.
 
 ## the Tools
-**Research**: Aggregation, APIs, SQL mirroring and even RSS feed were investigated as possible means of transporting data from resources promoting (facebook) or hosting (moveon.org) actionable items related to civic engagement.
+**Research**: Aggregation, APIs, SQL mirroring and even RSS feeds were investigated as possible means of transporting data from resources promoting (facebook) or hosting (moveon.org) actionable items related to civic engagement.
 
 **Development**: *React.JS.* As a newcomer to React and not the most experienced Javascript writer, I'm learning the language and will be exploring as I go.
