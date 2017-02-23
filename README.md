@@ -1,5 +1,5 @@
 # the Wheels of Civic Action App
-This project is being developed for DA 670S-the Web Development Studio class in the Digital Arts graduate program at Goucher College. The project draws inspiration from the use of technology for civic prosperity and will be developed using React.JS.
+This project is being developed for DA 670S-Web Development Studio in the Digital Arts graduate program at Goucher College. The project draws inspiration from the use of technology for civic prosperity and will be developed using React.JS.
 
 ## the Project
 Initially the concept was to create a mobile app that allowed users to search for events and other civic actions by location, date and issue.
