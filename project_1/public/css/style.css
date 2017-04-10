@@ -239,7 +239,7 @@ h1, h2, h3 {
 
 /*---------register.handlebars---------*/
 
-#regContainer {	
+.accessContainer {	
 	clear: both;
 	display: flex;
 	justify-content: center;
@@ -247,7 +247,7 @@ h1, h2, h3 {
   	/*background-color: #e0e2e4*/
 }
 
-#regForm {
+.popUpForm {
 	/*box-shadow: 0 0 10px #63b7ff;*/
 	box-shadow: 0 0 10px grey;
 	padding: 1vh;

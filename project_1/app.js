@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs'); //file system
 var mongoose = require('mongoose');
-// var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon'); //with installed and in package.json
 
 var handlebars = require('express-handlebars').create({ defaultLayout:'main' });
 app.engine('handlebars', handlebars.engine);
@@ -13,6 +13,8 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
 // app.use(favicon(path.join('public', 'favicon.ico')));
+// OR
+// app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //body parser
 app.use(require('body-parser').urlencoded({extended:true}));
