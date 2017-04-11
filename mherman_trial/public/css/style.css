@@ -73,8 +73,16 @@ h1, h2, h3 {
 	font-size: 2vh;
 	float: right;
 	color: #fbf7f3;
+	text-decoration: none;
 }
 
+#header_loginNav a {
+	text-decoration: none;
+}
+
+#header_loginNav :visited {
+	color: #fbf7f3;
+}
 /*---------home.handlebars---------*/
 
 .pageWrapper {
@@ -237,9 +245,9 @@ h1, h2, h3 {
 	margin-top: -30vh;
 }
 
-/*---------register.handlebars---------*/
+/*---------Forms: register/login.handlebars---------*/
 
-#regContainer {	
+.accessContainer {	
 	clear: both;
 	display: flex;
 	justify-content: center;
@@ -247,7 +255,7 @@ h1, h2, h3 {
   	/*background-color: #e0e2e4*/
 }
 
-#regForm {
+.popUpForm {
 	/*box-shadow: 0 0 10px #63b7ff;*/
 	box-shadow: 0 0 10px grey;
 	padding: 1vh;
