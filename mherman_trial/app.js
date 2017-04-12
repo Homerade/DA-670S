@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
+var expressSession = 
 // var favicon = require('serve-favicon'); with installed and in package.json
 
 var handlebars = require('express-handlebars').create({ defaultLayout: 'main' });
