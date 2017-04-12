@@ -35,6 +35,9 @@ app.use(express.static('public'));
 // flash middleware
 app.use(flash());
 
+// models
+var User = require('./models/user.js');
+
 // passport config
 app.use(expressSession({secret: 'mySecretKey'}));
 app.use(passport.initialize());
@@ -52,8 +55,10 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-// models
-var User = require('./models/user.js');
+// login(passport);
+// register(passport);
+
+// initPassport(passport);
 
 // ---------------------------Routes--------------------------- //
 
