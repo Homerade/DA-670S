@@ -1,0 +1,68 @@
+<div class='accessContainer'>
+
+	<form class='popUpForm' id='regForm' method='post' action='/register'>
+
+		<!-- <input type='hidden' name='regId' /> -->
+
+		<div>
+			<p>I am registering as:</p>
+			<input class='radioLabel' type='radio' name='indieRadio' />
+			<label for='indieRadio'>an individual</label>
+			<br />
+			<input class='radioLabel' type='radio' name='groupRadio' />
+			<label for='groupRadio'>a group (with a tax ID number ?)</label>
+		</div>
+
+		<br />
+		
+		<div class='hidden' class='loginli' class='indieli' >
+			<input class='popUpInput' type='text' name='firstName' placeholder='First Name'>
+		</div>
+
+		<br />
+
+		<div class='hidden' class='loginli' class='indieli'>
+			<input class='popUpInput' type='text' name='lastName' placeholder='Last Name'>
+		</div>	
+		
+		<br />
+
+		<div class='hidden' class='loginli' class='groupli' >
+			<input class='popUpInput' type='text' name='groupName' placeholder='Group Name'>
+		</div>
+
+		<br />
+
+		<div class='hidden' class='loginli' class='groupli'>
+			<input class='popUpInput' type='number' name='taxIdNum' placeholder='Tax ID Number'>
+		</div>
+
+		<br />
+
+		<div class='loginli'>
+			<input class='popUpInput' type='email' name='email' placeholder='Email'>
+		</div>
+
+		<br />
+
+		<div class='loginli'  class='indieli'>
+			<input class='popUpInput' type='text' name='username' placeholder='Username (optional)'>
+		</div>
+
+		<br />
+
+		<div class='loginli'>
+			<input class='popUpInput' type='password' name='password' placeholder='Password'>
+		</div>
+
+		<br />
+
+		<button name='submit' type='submit'>Register!</button>
+
+		<br />
+
+	</form>	
+
+</div>	
+
+

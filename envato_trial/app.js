@@ -26,7 +26,8 @@ mongoose.connect(credentials.mongo);
 // app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // .uses
-app.use(require('body-parser').urlencoded({extended: true}));
+// app.use(require('body-parser').urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -34,6 +35,11 @@ app.use(cookieParser());
 app.use(express.static('public'));
 // flash middleware
 app.use(flash());
+
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null;
+  next();
+});
 
 // models
 var User = require('./models/user.js');
@@ -55,11 +61,6 @@ passport.deserializeUser(function (id, done) {
   });
 });
 
-// login(passport);
-// register(passport);
-
-// initPassport(passport);
-
 // ---------------------------Routes--------------------------- //
 
 // --------homepage--------//
@@ -72,10 +73,7 @@ var isAuthenticated = function (req, res, next) {
 
 app.get('/', isAuthenticated, function (req, res) {
   var data = {
-    principleNav: 'What is Blocs?',
-    nav1: 'Sign In',
-    divider: '|',
-    nav2: 'Register'
+    divider: '|'
   };
   res.render('home', data, { user: req.user });
 });
@@ -110,13 +108,10 @@ function (req, username, password, done) {
         if (User.individual) {
           newUser.firstName = req.param('firstName');
           newUser.lastName = req.param('lastName');
-          newUser.email = req.param('email');
-          newUser.reEnterEmail = req.param('reEnterEmail');
-          newUser.username = username;
-          newUser.password = createHash(password);
+        } else {
+          newUser.groupName = req.param('groupName');
+          newUser.taxIdNum = req.param('taxIdNum');
         }
-        newUser.groupName = req.param('groupName');
-        newUser.taxIdNum = req.param('taxIdNum');
         newUser.email = req.param('email');
         newUser.reEnterEmail = req.param('reEnterEmail');
         newUser.username = username;
