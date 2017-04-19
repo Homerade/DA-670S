@@ -58,9 +58,8 @@ router.post('/register', function (req, res) {
 // login post & auth
 router.post('/login', passport.authenticate('local', {
 	failureRedirect: '/login',
-	failureFlash: 'Info not valid'
+	failureFlash: true
 }), function (req, res) {
-		req.flash('error', 'Invalid info');
 		res.redirect('/');		
 	});
 
@@ -68,8 +67,9 @@ router.post('/login', passport.authenticate('local', {
 passport.use(new LocalStrategy('local',
 	function (email, password, done) {
 		User.findOne({ email: email }, function(err, user) {
-			if (err) {
-				return done(err)
+			if (err) {				;
+				return done(err);
+				console.log(user);
 			}
 			if (!user || user.password !== password) {
 				return done(null, false);
