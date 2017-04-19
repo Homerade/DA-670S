@@ -7,6 +7,7 @@
 
 **results:** 
 -registration is making it into the database, although groupName, even though it's not required in the user.js model is needed bc if left blank more than once is being read as a duplicate.
+
 -login auth isn't working. No error except the one shown on the login page
 
 
