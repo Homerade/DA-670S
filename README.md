@@ -1,11 +1,11 @@
 # the latest
-file: steph_trial_3_LATEST
+**file:** steph_trial_3_LATEST
 
-changed: model/user.js, routes/index.js (specifically: the newUser info included and the passport.use local strategy from username lookup to email lookup)
+**changed:** model/user.js, routes/index.js (specifically: the newUser info included and the passport.use local strategy from username lookup to email lookup)
 
-for: in hopes of expanding the registration
+**for:** in hopes of expanding the registration
 
-results: 
+**results:** 
 -registration is making it into the database, although groupName, even though it's not required in the user.js model is needed bc if left blank more than once is being read as a duplicate.
 -login auth isn't working. No error except the one shown on the login page
 
