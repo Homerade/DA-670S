@@ -1,14 +1,16 @@
 # the latest
 **file:** steph_trial_3_LATEST
 
-**changed:** model/user.js, routes/index.js (specifically: the newUser info included and the passport.use local strategy from username lookup to email lookup)
+**changed:** model/user.js: registration inputs and routes/index.js: the added newUser inputs and in passport.use local strategy function, tried to change the default username to email.
 
 **for:** in hopes of expanding the registration
 
 **results:** 
 -registration is making it into the database, although groupName, even though it's not required in the user.js model is needed bc if left blank more than once is being read as a duplicate.
 
--login auth isn't working. No error except the one shown on the login page
+-login auth isn't working. "missing credentials error" (Does this mean all registered credentials need to be entered?)
+
+**Also:** want to change nav options when logged in. How can I know in my layouts when a session has started and how to change items?
 
 
 

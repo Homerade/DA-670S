@@ -64,9 +64,12 @@ router.post('/login', passport.authenticate('local', {
 	});
 
 // passport config
-passport.use(new LocalStrategy('local',
-	function (email, password, done) {
-		User.findOne({ email: email }, function(err, user) {
+passport.use(new LocalStrategy('local', {
+	usernameField: 'email',
+	passwordfield: 'password'
+	},
+	function (username, password, done) {
+		User.findOne({ username: username }, function(err, user) {
 			if (err) {				;
 				return done(err);
 				console.log(user);
