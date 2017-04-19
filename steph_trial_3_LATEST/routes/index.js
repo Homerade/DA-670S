@@ -23,7 +23,7 @@ router.get('/login', function (req, res) {
 // logout function setup
 router.get('/logout', function (req, res) {
 	req.logout();
-	res.redirect('/');
+	res.redirect('/login');
 });
 
 // register post
@@ -39,7 +39,7 @@ router.post('/register', function (req, res) {
    	var newUser = new User ({
     	firstName: firstName,
    		lastName: lastName,
-   		groupName,
+   		groupName: groupName,
     	email: email,
     	password: password
     });
