@@ -70,10 +70,13 @@ h1, h2, h3 {
 	position: relative;
 	margin: 2vh;
 	padding: 2vh;
-	font-size: 2vh;
+	font-size: 1.5vh;
 	float: right;
 	color: #fbf7f3;
 	text-decoration: none;
+	font-family: helvetica;
+	font-weight: lighter;
+	letter-spacing: .2vh;
 }
 
 #header_loginNav a {
@@ -186,11 +189,13 @@ h1, h2, h3 {
 .blockNav {
 	width: 49.9vw;
 	height: 35vh;
-	font-size: 7vh;
+	font-size: 4vh;
+	font-family: helvetica;
+	font-weight: lighter;
 	padding-top: 15vh;
 	float: left;
 	background-color: white;
-	letter-spacing: .2vw;
+	/*letter-spacing: .2vw;*/
 }
 
 #home_calendar, #home_addEvent{
@@ -204,8 +209,8 @@ h1, h2, h3 {
 	width: .1vh;
 	position: absolute;
 	right: 0;
-	top: 10vh;
-	background-color: black;
+	top: 7vh;
+	background-color: #898986;
 }
 
 .blockNavBgImg {
@@ -213,17 +218,15 @@ h1, h2, h3 {
 }
 
 #cal_image {
-	height: 25vh;
+	height: 20vh;
 	top: -5vh;
-	left: -5vw;
 	z-index: 2;
 	opacity: .2;
 }
 
 #event_image {
-	height: 35vh;
-	top: -10vh;
-	right: -5vw;
+	height: 20vh;
+	top: -5vh;
 	z-index: 2;
 	opacity: .2;
 }
@@ -232,17 +235,16 @@ h1, h2, h3 {
 	position: relative;
 	z-index: 99;
 	text-align: center;
-	color: white;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: grey;
 }
 
 #home_calendar p {
-	margin-top: -20vh;
+	margin-top: -5vh;
+	color: #e44850;
 }
 
 #home_addEvent p {
-	margin-top: -30vh;
+	margin-top: -5vh;
+	color: #6f6f6d;
 }
 
 /*---------Forms: register/login.handlebars---------*/
@@ -252,13 +254,92 @@ h1, h2, h3 {
 	display: flex;
 	justify-content: center;
   	align-items: center;
-  	/*background-color: #e0e2e4*/
+  	font-family: sans-serif;
+  	color: #606060;
 }
 
 .popUpForm {
-	/*box-shadow: 0 0 10px #63b7ff;*/
 	box-shadow: 0 0 10px grey;
-	padding: 1vh;
+	background-color: #f8f8f8;
+	padding: 2vw 2vw;
+}
+
+#accessError {
+	color: red;
+	font: 11px system-ui;
+	float: left;
+	margin: 0;
+}
+
+.popUpForm h2 {
+	margin: 1vh 0;
+	text-align: center;
+}
+
+.popUpForm p {
+	font-size: 2vh;
+	margin: 1vh;
+	color: #9c9c9c;
+	text-align: center;
+}
+
+.popUpForm label {
+	clear: both;
+	font-size: 1.7vh;
+	color: #9c9c9c;
+}
+
+	/*---name fields---*/
+
+.allNameDiv {
+	padding: 2vh 2vh 3vh 2vh;
+	border: .2vh solid #bfbfbf;
+	border-radius: .5vh;
+	background-color: #ebebeb;
+}
+
+.indieNameDiv {
+	display: inline-block;
+}
+
+.indieli {
+	float: left;
+}
+
+.indieli input{
+	width: 7.8vw;
+	height: 3vh;
+	border: .2vh solid #bfbfbf;
+	border-radius: .5vh;
+}
+
+#firstNameField {
+	margin-right: 1vw;
+}
+
+	/*---other fields---*/
+
+.loginli input, .groupli input {
+	width: 17vw;
+	height: 3vh;
+	border: .2vh solid #bfbfbf;
+	border-radius: .5vh;
+}
+
+.loginli {
+	text-align: center;
+}
+
+.popUpForm button {
+	margin: 0 auto;
+	display: block;
+	width: 7vw;
+	height: 4vh;
+	text-align: center;
+	background-color: #008CBA;
+	color: white;
+	border: .2vh solid #008CBA;
+	border-radius: .5vh;
 }
 
 /*.hidden {

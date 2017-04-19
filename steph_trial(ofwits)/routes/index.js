@@ -7,7 +7,7 @@ var User = require('../models/user');
 
 // homepage setup
 router.get('/', function (req, res) {
-	res.render('home');
+	res.render('home', { error: req.flash('error') });
 });
 
 // register page setup
@@ -17,7 +17,7 @@ router.get('/register', function (req, res) {
 
 // login page setup
 router.get('/login', function (req, res) {
-	res.render('login');
+	res.render('login', { error: req.flash('error') });
 });
 
 // logout function setup
@@ -28,78 +28,48 @@ router.get('/logout', function (req, res) {
 
 // register post
 router.post('/register', function (req, res) {
-	var individual = req.body.indieRadio;
-	var group = req.body.groupRadio,
-    var individualReg: [
-	    firstName: req.body.firstName,
-	   	lastName: req.body.lastName
-    ],
-    groupReg: {
-      var groupName: req.body.groupName,
-      var taxIdNum: req.body.taxIdNum
-    },
-    var email: req.body.email,
-    var username: req.body.username,
-    var password: req.body.password
 
-    if (err){
-    	throw err;
-    } else {
-    	var newUser = new User ({
-    		individual: individual,
-    		group: group,
-    		individualReg: {
-    			firstName: firstName,
-    			lastName: lastName
-    		},
-    		groupReg: {
-    			groupName: groupName,
-    			taxIdNum: taxIdNum
-    		},
-    		email: email,
-    		username: username,
-    		password: password
-    	});
+    var username = req.body.username;
+    var password = req.body.password;
 
-    	User.createUser(newUser, function (err, user) {
-    		if (err) throw err;
-    		console.log(user);
-    	});
+  
+   	var newUser = new User ({
+    	username: username,
+    	password: password
+    });
 
-    	req.flash('message', 'You have successfully registered!');
+	newUser.save(function (err) {
+		if (err) {
+			res.status(500).send({ message: err.message});
+			return 
+		}
+		req.flash('message', 'You have successfully registered!');
 
-    	res.redirect('/');
-    }	
+		res.redirect('/');
+	});	
 });
 
 // login post & auth
-routher.post('/login', passport.authenticate('local', {
-	successRedirect: '/',
+router.post('/login', passport.authenticate('local', {
 	failureRedirect: '/login',
-	failureFlash: true
-	}),
-	function (req, res) {
-		res.redirect('/');
+	failureFlash: 'Info not valid'
+}), function (req, res) {
+		req.flash('error', 'Invalid info');
+		res.redirect('/');		
 	});
 
 // passport config
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy('local',
 	function (username, password, done) {
-		User.getUserByUsername(username, function (err, user) {
-			if (err) throw err;
-			if (!user){
-				return done (null, false, req.flash('message', 'User not found'));
+		User.findOne({ username: username }, function(err, user) {
+			if (err) {
+				return done(err)
 			}
-
-			User.checkPassword(password, user.password, function (err, isValidPassword) {
-				if (err) throw err;
-				if (isValidPassword) {
-					return done(null, user);
-				} else {
-					return done(null, false, req.flash('message', 'Invalid password'));
-				}
+			if (!user || user.password !== password) {
+				return done(null, false);
+			}
+			done(null, user);
 		});
-	});
 }));
 
 passport.serializeUser(function (user, done) {
@@ -107,7 +77,7 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(function (id, done) {
-	User.getUserById(id, function (err, user) {
+	User.findById(id, function (err, user) {
 		done(err, user);
 	});
 });
