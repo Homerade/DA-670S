@@ -8,7 +8,7 @@
 **results:** 
 -registration is making it into the database, although groupName, even though it's not required in the user.js model is needed bc if left blank more than once is being read as a duplicate.
 
--login auth isn't working. "missing credentials error" (Does this mean all registered credentials need to be entered?)
+-login auth isn't working. "missing credentials" error (Does this mean all registered credentials need to be entered?)
 
 **Also:** want to change nav options when logged in. How can I know in my layouts when a session has started and how to change items?
 
