@@ -1,17 +1,14 @@
 # the latest
-**file:** steph_trial_3_LATEST
+**file:** steph_trial_4_LATEST
 
-**changed:** model/user.js: registration inputs and routes/index.js: the added newUser inputs and in passport.use local strategy function, tried to change the default username to email.
+trying to make email login instead of password. These are the resources:
 
-**for:** in hopes of expanding the registration
+http://stackoverflow.com/questions/18138992/use-email-with-
+passport-local-previous-help-not-working
 
-**results:** 
--registration is making it into the database, although groupName, even though it's not required in the user.js model is needed bc if left blank more than once is being read as a duplicate.
+http://passportjs.org/docs/username-password
 
--login auth isn't working. "missing credentials" error (Does this mean all registered credentials need to be entered?)
-
-**Also:** want to change nav options when logged in. How can I know in my layouts when a session has started and how to change items?
-
+put this code into line 68/69 of routes/index.js and kept 'username' in the function on line 71 but have't tried changing email in the .fineOne method yet to see if that might do it.
 
 
 
