@@ -66,13 +66,15 @@ router.post('/login', passport.authenticate('local', {
 // passport config
 passport.use(new LocalStrategy({
 	usernameField: 'email',
-	passwordField: 'password'
+	passwordField: 'password',
+	session: false,
+	passReqToCallback: true
 },
-	function (username, password, done) {
+	function (req, email, password, done) {
 		User.findOne({ email: email }, function(err, user) {
 			if (err) {				;
 				return done(err);
-				console.log(err);
+				// console.log(err);
 			}
 			if (!user || user.password !== password) {
 				return done(null, false);

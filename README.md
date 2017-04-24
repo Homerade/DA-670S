@@ -1,14 +1,11 @@
 # the latest
 **file:** steph_trial_4_LATEST
 
-trying to make email login instead of password. These are the resources:
+Got the email login to work thanks to this: http://stackoverflow.com/questions/32398120/passport-allow-sign-up-with-name-and-email-address-local-strategy
 
-http://stackoverflow.com/questions/18138992/use-email-with-
-passport-local-previous-help-not-working
+Now trying to change the page links based on whether someone is signed in or not. Starting by looking further into sessions.
 
-http://passportjs.org/docs/username-password
-
-put this code into line 68/69 of routes/index.js and kept 'username' in the function on line 71 but have't tried changing email in the .fineOne method yet to see if that might do it.
+Next: encrypt passwords with bcrypt.
 
 
 
