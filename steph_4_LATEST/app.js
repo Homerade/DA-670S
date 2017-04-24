@@ -31,7 +31,6 @@ app.use(cookieParser());
 app.use(express.static('public'));
 // flash middleware
 
-
 // express session
 app.use(session({
   secret: 'mySecretKey',
@@ -40,6 +39,10 @@ app.use(session({
 }));
 
 app.use(flash());
+
+// app.use(function (req, res, next) {
+//   res.locals.login = req.isAuthenticated();
+//   next(); });
 
 // passport config
 app.use(passport.initialize());
@@ -59,9 +62,6 @@ passport.deserializeUser(function (id, done) {
 
 var routes = require('./routes/index');
 app.use('/', routes);
-// var users = require('./routes/users');
-// app.use('/users', users);
-
 
 // --------error handlers--------//
 

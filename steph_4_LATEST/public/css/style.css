@@ -79,11 +79,11 @@ h1, h2, h3 {
 	letter-spacing: .2vh;
 }
 
-#header_loginNav a {
+#header_loginNav a, #header_logo a {
 	text-decoration: none;
 }
 
-#header_loginNav :visited {
+#header_loginNav :visited, #header_logo :visited {
 	color: #fbf7f3;
 }
 /*---------home.handlebars---------*/
