@@ -6,7 +6,7 @@
 		<h2>Login</h2>
 
 		{{#if error}}
-			<p id='accessError'>Invalid login info</p>
+			<p id='accessError'>{{error}}</p>
 		{{/if}}
 
 		<br />
@@ -24,10 +24,6 @@
 		<br />
 
 		<button id='loginButton' name='submit' type='submit'>Login</button>
-
-		<br />
-
-		<button id='logoutButton' name='submit' type='submit'><a href='/logout'>Logout</a></button>
 
 		<br />
 

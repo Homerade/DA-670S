@@ -2,7 +2,8 @@
 <html>
 	<head>
 		<title>Project 1</title>
-		<link rel='stylesheet' type='text/css' href='css/style.css'			
+		<link rel='stylesheet' type='text/css' href='css/style.css'	/>
+		<link rel='stylesheet' type='text/css' href='css/fullcalendar.css' />		
 	</head>
 
 	<header>
@@ -14,11 +15,14 @@
 				</div>
 			</div>
 		
-				
-			<div id='header_prinNav'>{{principleNav}}</div>
+			{{#if loggedIn}}
+				<div id='header_prinNav'>See upcoming events</div>
+			{{else}}	
+				<div id='header_prinNav'>What is Blocs?</div>
+			{{/if}}	
 			
 			<div id='header_loginNav'>
-				{{#if user}}
+				{{#if loggedIn}}
 					<span id='header_nav2'><a href='/logout'>Logout</a></span>
 				{{else}}
 					<span id='header_nav1'><a href='/login'>Sign In</a></span>
@@ -30,12 +34,14 @@
 
 		</div>		
 	</header>	
-
-	<!-- <div id='bgImgContainer'>
-		<img id='home_mastBgImg' src='img/masses.jpg'/>
-	</div> -->
 		
 	<body>
+		{{#if flash}}
+			<div class='flashMessage'>
+				<h2>{{flash.intro}}</h2>
+				<p>{{flash.message}}</p>
+			</div>
+		{{/if}}		
 		{{{ body }}}
 	</body>	
 

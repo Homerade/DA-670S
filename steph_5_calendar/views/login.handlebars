@@ -1,0 +1,38 @@
+<div class='accessContainer'>
+
+	{{#if flash}}
+		<div class='flashMessage'>
+			<h2>{{flash.intro}}</h2>
+			<p>{{flash.message}}</p>
+		</div>
+	{{/if}}
+
+	<form class='popUpForm' id='loginForm' method='post' action='/login'>
+
+		<h2>Login</h2>
+
+		{{#if error}}
+			<p id='accessError'>{{error}}</p>
+		{{/if}}
+
+		<br />
+
+		<div class='loginli'>
+			<input class='popUpInput' type='email' name='email' placeholder='email'>
+		</div>	 
+
+		<br />
+
+		<div class='loginli'>
+			<input class='popUpInput' type='password' name='password' placeholder='password'>
+		</div>	
+
+		<br />
+
+		<button id='loginButton' name='submit' type='submit'>Login</button>
+
+		<p id='notRegLink'><a href='/register'>Not registered?</a></p>
+
+	</form>	
+
+</div>	

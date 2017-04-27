@@ -7,12 +7,15 @@ var User = require('../models/user');
 
 // homepage setup
 router.get('/', function (req, res) {
-  res.render('home', { error: req.flash('error') });
+  res.render('home', { 
+  	error: req.flash('error'),
+  	loggedIn: !!req.user
+  });
 });
 
 // register page setup
 router.get('/register', function (req, res) {
-  res.render('register');
+  res.render('register', { message: req.flash('message') });
 });
 
 // login page setup
@@ -24,6 +27,32 @@ router.get('/login', function (req, res) {
 router.get('/logout', function (req, res) {
   req.logout();
   res.redirect('/login');
+});
+
+
+// local API route
+router.get('/calendar', function (req, res) {
+	res.render('calendar');
+});
+
+router.get('/api/events', function (req, res) {
+	res.status(200).send([
+		{
+			title: "event 1",
+			start: "2017-04-25",
+			allDay: true
+		},
+		{	
+			title: "event 2",
+			start: "2017-04-27T9:00:34",
+			end: "2017-04-27T15:00:34"
+		},
+		{	
+			title: "event 3",
+			start: "2017-04-29T9:00:34",
+			url: "https://www.google.com/"
+		}
+		]);
 });
 
 // register post
@@ -47,16 +76,20 @@ router.post('/register', function (req, res) {
       res.status(500).send({ message: err.message });
       return;
     }
-    req.flash('message', 'You have successfully registered!');
-
-    res.redirect('/');
+    // req.flash('message', 'You have successfully registered!');
+    req.session.flash = {
+        type: 'success',
+        intro: 'You have successfully registered!',
+        message: ' You can now login'
+    }
+    res.redirect('/login');
   });
 });
 
 // login post & auth
 router.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
-  failureFlash: true
+  failureFlash: 'Invalid login information' //sets the error message
 }), function (req, res) {
 	res.redirect('/');
 });
@@ -65,7 +98,6 @@ router.post('/login', passport.authenticate('local', {
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
-  session: false,
   passReqToCallback: true
 },
 
@@ -77,7 +109,6 @@ function (req, email, password, done) {
     if (!user || user.password !== password) {
       return done(null, false);
     }
-    req.session.user = user;
     done(null, user);
   });
 }));

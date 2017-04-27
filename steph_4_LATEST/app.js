@@ -29,7 +29,7 @@ app.use(logger('dev'));
 app.use(cookieParser());
 // establish "public directory" in express
 app.use(express.static('public'));
-// flash middleware
+
 
 // express session
 app.use(session({
@@ -38,11 +38,14 @@ app.use(session({
   resave: true
 }));
 
+// flash middleware
 app.use(flash());
 
-// app.use(function (req, res, next) {
-//   res.locals.login = req.isAuthenticated();
-//   next(); });
+app.use(function (req, res, next) {
+  res.locals.flash = req.session.flash;
+  delete req.session.flash;
+  next(); 
+});
 
 // passport config
 app.use(passport.initialize());
