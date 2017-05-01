@@ -21,7 +21,7 @@ h1, h2, h3 {
 	height: 9vh;
 	width: 100vw;
 	margin: 0;
-	background-color: purple;
+	background-color: purple; /*#660066*/
 	color: white;
 }
 
@@ -31,7 +31,7 @@ h1, h2, h3 {
 	position: relative;
 	margin-left: 5vw;
 	padding: 3.5vh;
-	background-color: purple;
+	background-color: purple; /*#660066*/
 	float: left;
 	z-index: 99;
 }
@@ -108,6 +108,24 @@ h1, h2, h3 {
 .flashMessage p {
 	color: #606060;
 	letter-spacing: initial;
+}
+
+footer {
+	clear: both;
+	background-color: purple;
+	height: 6vh;
+	margin: 0;
+	display: block;
+}
+
+footer p {
+	color: white;
+	float: right;
+	margin: .5vh 1vw;
+	font-family: helvetica;
+	font-weight: lighter;
+	font-size: 2vh;
+	margin: 2vh;
 }
 
 /*---------home.handlebars---------*/
@@ -385,5 +403,30 @@ h1, h2, h3 {
 	clear: both;
 	display: block;
 	margin: 0;
-	padding: 7vh 20vh;
+	padding: 4vh 20vh;
 }
+
+.addEventLink_cal {
+	float: right;
+	font-size: 3vh;
+	font-family: helvetica;
+	font-weight: lighter;
+	color: #e44850;
+	border: 1px solid #e44850;
+	padding: .5vh 1vw;
+	text-decoration: none;
+}
+
+.addEventLink_cal a {
+	text-decoration: none;
+	color: #e44850;
+}
+
+#eventLinkTop {
+	margin: 4vh 3vw 6vh;
+}
+
+#eventLinkBottom {
+	margin: 2vh 3vw 6vh;
+}
+
