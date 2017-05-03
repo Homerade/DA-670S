@@ -94,6 +94,7 @@ h1, h2, h3 {
 
 #header_loginNav :visited, #header_logo :visited {
 	color: #fbf7f3;
+	text-decoration: none;
 }
 
 .flashMessage {
@@ -428,5 +429,38 @@ footer p {
 
 #eventLinkBottom {
 	margin: 2vh 3vw 6vh;
+}
+
+.eventSelect {
+	position: relative;
+    display: inline-block;
+    overflow: visible;
+    z-index: 10000;
+}
+
+.test {
+    width: 12vw;
+    background-color: #dfdfdf; /*#555*/
+    color: #555; /*#fcfbf9*/
+    border-radius: 1.5vh;
+    padding: 1vh;
+    position: absolute;
+    z-index: 10000;
+    bottom: 5vh;
+    left: 4vw;
+    margin-left: -5.25vw;
+    overflow: visible;
+    /*border: 1px solid #555;*/
+}
+
+.test::after {	
+	content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -.6vw;
+    border-width: .8vw;
+    border-style: solid;
+    border-color: #dfdfdf transparent transparent transparent;
 }
 

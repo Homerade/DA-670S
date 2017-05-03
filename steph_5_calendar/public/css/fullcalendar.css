@@ -874,10 +874,10 @@ a.fc-more:hover {
 	z-index: 3;
 }
 
-.fc-toolbar .fc-state-active,
+/*.fc-toolbar .fc-state-active,
 .fc-toolbar .ui-state-active {
 	z-index: 4;
-}
+}*/
 
 .fc-toolbar button:focus {
 	z-index: 5;
@@ -1363,6 +1363,7 @@ be a descendant of the grid when it is being dragged.
 
 .fc-list-item:hover td {
 	background-color: #f5f5f5;
+	cursor: pointer;
 }
 
 .fc-list-item-marker,
@@ -1410,4 +1411,8 @@ be a descendant of the grid when it is being dragged.
 
 .fc-unthemed .fc-list-empty { /* theme will provide own background */
 	background-color: #eee;
+}
+
+.fc-day-grid-container {
+	overflow: visible !important;
 }
