@@ -24,6 +24,16 @@ eventClick: function (calEvent, jsEvent, view) {
     	$(this).append('<div class="test"><p>Event</p></div>');
     }
 
+    eventClick: function ( calEvent, jsEvent, view ) {
+		$('.test').remove();
+			//then:
+	    $(this).addClass('eventSelect').append('<span class="test"><p>Event: '+ calEvent.title +
+	    		'</p><p>Date: '+ calEvent.start +
+	    		'</p><p>Hosted By: '+ calEvent.eventGroup +
+	    		'</p><p>Link: '+ calEvent.url +
+	    		'</p></span>');
+    	}
+
 // didn't work:
 	eventClick: function ( calEvent, jsEvent, view ) {
 		if ($(this).hasClass('test')) {
@@ -38,11 +48,28 @@ eventClick: function (calEvent, jsEvent, view) {
     }    
 
 
-$(document).click(function() {
-	$('.fc-content').removeClass('test')
-});
+	$(document).click(function() {
+		$('.fc-content').removeClass('test')
+	});
 
 
-eventClick: function () {
-    	$(body).removeClass('test');
-    }	
+	eventClick: function () {
+	    	$(body).removeClass('test');
+	    }	
+
+
+	var tooltip = '<span class="test"><p><b>Event:</b> '+ calEvent.title +
+    		'</p><p><b>Date:</b> '+ calEvent.start +
+    		'</p><p><b>Hosted By:</b> '+ calEvent.eventGroup +
+    		(calEvent.url && '<p><b>Link:</b> '+calEvent.url +'</p>' || '') +
+    		'</p></span>'	    
+
+
+
+
+
+
+
+
+
+

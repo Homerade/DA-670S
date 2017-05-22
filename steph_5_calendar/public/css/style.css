@@ -24,7 +24,6 @@ h1, h2, h3 {
 	background-color: purple; /*#660066*/
 	color: white;
 }
-
 	/*---Logo---*/
 
 #header_logo {
@@ -342,7 +341,7 @@ footer p {
 	/*---name fields---*/
 
 .allNameDiv {
-	padding: 2vh 2vh 3vh 2vh;
+	padding: 1vh 2vh 3vh 2vh;
 	border: .2vh solid #bfbfbf;
 	border-radius: .5vh;
 	background-color: #ebebeb;
@@ -352,13 +351,21 @@ footer p {
 	display: inline-block;
 }
 
+.indieNameDiv p {
+	margin: 1vh 0;
+	font-size: 1.8vh;
+	color: #606060;
+	text-align: left;
+}
+
 .indieli {
 	float: left;
 }
 
 .indieli input{
 	width: 7.8vw;
-	height: 3vh;
+	height: 4vh;
+	padding: 0 .5vw;
 	border: .2vh solid #bfbfbf;
 	border-radius: .5vh;
 }
@@ -370,8 +377,9 @@ footer p {
 	/*---other fields---*/
 
 .loginli input, .groupli input {
-	width: 17vw;
-	height: 3vh;
+	width: 17.8vw;
+	height: 4vh;
+	padding: 0 .5vw;
 	border: .2vh solid #bfbfbf;
 	border-radius: .5vh;
 }
@@ -381,7 +389,7 @@ footer p {
 }
 
 .popUpForm button {
-	margin: 0 auto;
+	margin: 2vh auto;
 	display: block;
 	width: 7vw;
 	height: 4vh;
@@ -390,12 +398,75 @@ footer p {
 	color: white;
 	border: .2vh solid #008CBA;
 	border-radius: .5vh;
+	text-decoration: none;
+	cursor: pointer;	
+}
+
+.popUpForm button a, .popUpForm button :visited {
+	color: white;
+	text-decoration: none;
 }
 
 #notRegLink a {
 	font-size: 1.7vh;
 	text-decoration: none;
 	color: #008CBA;
+}
+
+	/*---add event---*/
+
+.hidden {
+	display: none;
+}	
+
+.addEventLi input, .addEventLi select {
+	float: right;
+	width: 17.8vw;
+	height: 3.5vh;
+	padding: 0 .5vw;
+	border: .2vh solid #bfbfbf;
+	border-radius: .8vh;
+}	
+
+.addEventLi label {
+	color: grey;
+}
+
+#addEventForm p {
+	color:  #606060;
+	text-align: left;
+	font-weight: bold;
+}
+
+#addEventForm h3 {
+	text-align: center2;
+}
+
+#addEventForm select {
+	width: 18.99vw;
+	height: 4vh;
+	background-color: white;
+	border: .2vh solid #bfbfbf;
+}
+
+select:required:invalid {
+	color: grey;
+	font-style: italic;
+}
+
+option[value=""][disabled]{
+	display: none;
+}
+
+#pageNum, #backBtn {
+	text-align: center;
+	color: grey;
+	font-size: 1.5vh;
+	font-weight: normal;
+}
+
+#backBtn {
+	cursor: pointer;
 }
 
 /*---------calendar.handlebars---------*/
@@ -418,9 +489,22 @@ footer p {
 	text-decoration: none;
 }
 
+.addEventLink_cal:hover {
+	color: white;
+	background-color: #e44850;
+}
+
 .addEventLink_cal a {
 	text-decoration: none;
-	color: #e44850;
+}
+
+.addEventLink_cal :visited {
+	color: inherit;
+}
+
+.addEventLink_cal:visited:hover {
+	color: white;
+	background-color: #e44850;
 }
 
 #eventLinkTop {
@@ -439,7 +523,7 @@ footer p {
 }
 
 .test {
-    width: 12vw;
+    /*width: 13vw;*/
     background-color: #dfdfdf; /*#555*/
     color: #555; /*#fcfbf9*/
     border-radius: 1.5vh;
@@ -449,8 +533,8 @@ footer p {
     bottom: 5vh;
     left: 4vw;
     margin-left: -5.25vw;
-    overflow: visible;
-    /*border: 1px solid #555;*/
+    /*overflow: scroll;*/
+    cursor: default;
 }
 
 .test::after {	
@@ -463,4 +547,34 @@ footer p {
     border-style: solid;
     border-color: #dfdfdf transparent transparent transparent;
 }
+
+.closebtn {
+	float: right;
+	cursor: pointer;
+	opacity: .5;
+}
+
+.closebtn:before, .closebtn:after {
+  position: absolute;
+  right: 1vw;
+  content: ' ';
+  height: 2vh;
+  width: .25vh;
+  background-color: #333;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  opacity: 1;
+}
+
+.closebtn:before {
+  transform: rotate(45deg);
+}
+
+.closebtn:after {
+  transform: rotate(-45deg);
+}
+
+
 

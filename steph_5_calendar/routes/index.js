@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var queryString = require('query-string');
+var _ = require('lodash');
 
 var User = require('../models/user');
 var Event = require('../models/event');
@@ -35,14 +37,27 @@ router.get('/addevent', function (req, res) {
   res.render('addEvent');
 });
 
-
-// local API route
-router.get('/calendar', function (req, res) {
-	res.render('calendar');
+// add event page 2
+router.get('/addeventpage2', function (req, res) {
+  res.render('addeventpage2');
 });
 
+// add event page
+// router.get('/addeventtemp', function (req, res) {
+//   res.render('addEventTemp');
+// });
+
+
+// local API route
+// router.get('/calendar', function (req, res) {
+// 	res.render('calendar');
+// });
+
 router.get('/api/events', function (req, res) {
-  Event.find({}, function (err, events) {
+  console.log('query', req.query);
+  var filter = req.query ? _.pick(req.query, ['meetZip']) : {};
+  console.log('filter', filter);
+  Event.find(filter, function (err, events) {
     if (err) {
       res.sendStatus(500);
     }
@@ -54,14 +69,26 @@ router.get('/api/events', function (req, res) {
 router.post('/addEvent', function (req, res) {
   var title = req.body.title;
   var start = req.body.start;
+  var time = req.body.time;
   var eventGroup = req.body.eventGroup;
   var url = req.body.url;
+  var issueCat = req.body.issueCat;
+  var meetAddress = req.body.meetAddress;
+  var meetCity = req.body.meetCity;
+  var meetState = req.body.meetState;
+  var meetZip = req.body.meetZip;
 
   var newEvent = new Event({
     title: title,
     start: start,
+    time: time,
     eventGroup: eventGroup,
-    url: url
+    url: url,
+    issueCat: issueCat,
+    meetAddress: meetAddress,
+    meetCity: meetCity,
+    meetState: meetState,
+    meetZip: meetZip
   });
 
   newEvent.save(function (err) {

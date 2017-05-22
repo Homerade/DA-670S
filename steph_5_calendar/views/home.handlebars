@@ -18,20 +18,20 @@
 			<div id='home_locationBox' class='searchBar'>
 				<h3>LOCATION</h3>
 				<br>
-				<input id='locationInput' class='searchField' type='text' placeholder='Enter zip'><button>Go</button></input>
+				<input class='searchField' name='locationInput' type='text' placeholder='Enter zip'><button id='zipGo'>Go</button></input>
 			</div>	
 			
 			<div id='home_issueBox' class='searchBar'>
 				<h3>ISSUE</h3>
 				<br>
-				<input id='issueInput' class='searchField' type='text' placeholder='Enter or browse issues'><button>Go</button></input>				
+				<input class='searchField' name='issueInput' type='text' placeholder='Enter or browse issues'><button id='issueGo'>Go</button></input>				
 			</div>
 			
 			<div id='home_groupBox' class='searchBar'>
 				<h3>GROUP</h3>
 				<br>
-				<input class='searchField' id='groupInput' type='text' placeholder='Enter or browse groups'></input>
-				<button>Go</button>	
+				<input class='searchField' name='groupInput' type='text' placeholder='Enter or browse groups'></input>
+				<button id='groupGo'>Go</button>	
 			</div>
 	</div>	
 
@@ -47,3 +47,6 @@
 	</div>	
 
 </div>		
+
+<script type='text/javascript' src='/scripts/jquery-3.2.1.min.js'></script>
+<script type='text/javascript' src='/scripts/eventSearch.js'></script>
