@@ -15,24 +15,24 @@
 		<!-- <h2 id='siteSearchTitle'>Search by</h2> -->
 		
 
-			<div id='home_locationBox' class='searchBar'>
+			<form id='home_locationBox' class='searchBar' method='get' action='/calendar'>
 				<h3>LOCATION</h3>
 				<br>
-				<input class='searchField' name='locationInput' type='text' placeholder='Enter zip'><button id='zipGo'>Go</button></input>
-			</div>	
+				<input class='searchField' name='meetZip' type='text' placeholder='Enter zip'><button id='zipGo'>Go</button></input>
+			</form>	
 			
-			<div id='home_issueBox' class='searchBar'>
+			<form id='home_issueBox' class='searchBar' method='get' action='/calendar'>
 				<h3>ISSUE</h3>
 				<br>
-				<input class='searchField' name='issueInput' type='text' placeholder='Enter or browse issues'><button id='issueGo'>Go</button></input>				
-			</div>
+				<input class='searchField' name='issueCat' type='text' placeholder='Enter or browse issues'><button id='issueGo'>Go</button></input>				
+			</form>
 			
-			<div id='home_groupBox' class='searchBar'>
+			<form id='home_groupBox' class='searchBar' method='get' action='/calendar'>
 				<h3>GROUP</h3>
 				<br>
-				<input class='searchField' name='groupInput' type='text' placeholder='Enter or browse groups'></input>
+				<input class='searchField' name='eventGroup' type='text' placeholder='Enter or browse groups'></input>
 				<button id='groupGo'>Go</button>	
-			</div>
+			</form>
 	</div>	
 
 	<div id='home_sitePages'>		

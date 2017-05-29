@@ -43,21 +43,23 @@ router.get('/addeventpage2', function (req, res) {
 });
 
 // add event page
-// router.get('/addeventtemp', function (req, res) {
-//   res.render('addEventTemp');
-// });
+router.get('/addeventtemp', function (req, res) {
+  res.render('addEventTemp');
+});
 
 
 // local API route
-// router.get('/calendar', function (req, res) {
-// 	res.render('calendar');
-// });
+router.get('/calendar', function (req, res) {
+	res.render('calendar');
+});
 
 router.get('/api/events', function (req, res) {
   console.log('query', req.query);
-  var filter = req.query ? _.pick(req.query, ['meetZip']) : {};
-  console.log('filter', filter);
-  Event.find(filter, function (err, events) {
+  //delete random queries full calendar returns and add my own
+  delete req.query.start;
+  delete req.query.end;
+  delete req.query._;
+  Event.find(req.query, function (err, events) {
     if (err) {
       res.sendStatus(500);
     }
@@ -80,7 +82,7 @@ router.post('/addEvent', function (req, res) {
 
   var newEvent = new Event({
     title: title,
-    start: start,
+    start: new Date(`${start} ${time}`),
     time: time,
     eventGroup: eventGroup,
     url: url,

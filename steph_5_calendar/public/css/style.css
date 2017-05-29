@@ -389,7 +389,7 @@ footer p {
 }
 
 .popUpForm button {
-	margin: 2vh auto;
+	margin: 3vh auto;
 	display: block;
 	width: 7vw;
 	height: 4vh;
@@ -419,6 +419,11 @@ footer p {
 	display: none;
 }	
 
+#addEventForm {
+	margin-top: -4vh;
+	margin-bottom: 8vh;
+}
+
 .addEventLi input, .addEventLi select {
 	float: right;
 	width: 17.8vw;
@@ -432,12 +437,6 @@ footer p {
 	color: grey;
 }
 
-#addEventForm p {
-	color:  #606060;
-	text-align: left;
-	font-weight: bold;
-}
-
 #addEventForm h3 {
 	text-align: center2;
 }
@@ -445,6 +444,13 @@ footer p {
 #addEventForm select {
 	width: 18.99vw;
 	height: 4vh;
+	background-color: white;
+	border: .2vh solid #bfbfbf;
+}
+
+#addEventForm2 select {
+	width: 18.95vw;
+	height: 3.7vh;
 	background-color: white;
 	border: .2vh solid #bfbfbf;
 }

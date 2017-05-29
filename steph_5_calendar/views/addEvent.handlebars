@@ -1,5 +1,6 @@
 <div class='accessContainer'>
-	<form class='popUpForm' id='addEventForm' method='post' action='/addEvent'>
+	<form method='post' action='/addEvent'>
+	<section class='popUpForm' id='addEventForm'>
 		<h2>Add a Calendar Event</h2>
 
 		<br />
@@ -57,16 +58,16 @@
 			</select>	
 		</div>	
 
-		<br /><br />
+		<br />
 
 		<button name='next' id='nextBtn'>Next</button>
 
-		<span id='pageNum'>- page 1 of 2 -</span>
+		<p id='pageNum'>- page 1 of 2 -</p>
 
 
-	</form>	
+	</section>	
 
-	<form class='popUpForm hidden' id='addEventForm2' method='post' action='/addEvent'>
+	<section class='popUpForm hidden' id='addEventForm2' method='post' action='/addEvent'>
 
 		<h3>Meet Up Spot!</h3>
 
@@ -88,7 +89,8 @@
 
 		<div class='addEventLi'>
 			<label>State</label>
-			<select class='addEventInput' type='text' name='meetState'>
+			<input class='addEventInput' type='text' list='stateList' name='meetState'>
+			<datalist id='stateList'>	
 				<option value=""></option>
 				<option value="AL">Alabama</option>
 				<option value="AK">Alaska</option>
@@ -141,7 +143,7 @@
 				<option value="WV">West Virginia</option>
 				<option value="WI">Wisconsin</option>
 				<option value="WY">Wyoming</option>
-			</select>
+			</datalist>
 		</div>	
 
 		<br />
@@ -151,12 +153,13 @@
 			<input class='addEventInput' type='text' name='meetZip'>
 		</div>	
 
-		<br /><br />
+		<br />
 
-		<button id='nextBtn'>Next</button>
+		<button name='submit' type='submit'>Submit</button>
 
-		<span id='backBtn'>back to previous page</span>
+		<p id='backBtn'>< < back to previous page</p>
 
+	</section>	
 	</form>	
 </div>
 

@@ -1,12 +1,14 @@
 var eventsUrl = '/api/events' + window.location.search
 
 $('#calPage').fullCalendar({
+    timezone: 'local',
     events: eventsUrl,
     header: {
     	left: 'prev, today, next',
     	center: 'title',
     	right: 'basicDay, month, year, listYear'
     },
+    timeFormat: 'h(:mm)t',
     selectable: true,
 
     eventMouseover: function ( calEvent, jsEvent, view ) {
@@ -35,5 +37,8 @@ $('#calPage').fullCalendar({
 
   });
 
-	
+
+if (window.location.search) {
+    $('#calPage').fullCalendar('changeView', 'listYear');
+}	
 	
