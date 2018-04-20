@@ -11,6 +11,18 @@ h1, h2, h3 {
 	padding: 0;
 }
 
+a:-webkit-any-link {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:any-link {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
+
 /*---------main.handlebars---------*/
 
 	/*---Header---*/
@@ -89,6 +101,7 @@ h1, h2, h3 {
 
 #header_loginNav a, #header_logo a {
 	text-decoration: none;
+	color: white;
 }
 
 #header_loginNav :visited, #header_logo :visited {
@@ -237,7 +250,7 @@ footer p {
 	font-size: 4vh;
 	font-family: helvetica;
 	font-weight: lighter;
-	padding-top: 15vh;
+	padding-top: 12vh;
 	float: left;
 	background-color: white;
 	/*letter-spacing: .2vw;*/
@@ -493,9 +506,15 @@ option[value=""][disabled]{
 	border: 1px solid #e44850;
 	padding: .5vh 1vw;
 	text-decoration: none;
+		/*-moz-padding: 1vh 1vw .5vh;*/
 }
 
-.addEventLink_cal:hover {
+.addEventLink_cal p {
+	margin: 0;
+	color: #e44850;
+}
+
+.addEventLink_cal:hover, .addEventLink_cal p:hover {
 	color: white;
 	background-color: #e44850;
 }
@@ -505,7 +524,7 @@ option[value=""][disabled]{
 }
 
 .addEventLink_cal :visited {
-	color: inherit;
+	color: #e44850;
 }
 
 .addEventLink_cal:visited:hover {

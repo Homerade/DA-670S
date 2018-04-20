@@ -1343,6 +1343,8 @@ be a descendant of the grid when it is being dragged.
 
 .fc .fc-list-table {
 	table-layout: auto; /* for shrinkwrapping cell content */
+	font-family: helvetica;
+	font-weight: lighter;
 }
 
 .fc-list-table td {
@@ -1361,7 +1363,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .fc-list-heading td {
-	font-weight: bold;
+	font-weight: normal;
 }
 
 .fc-ltr .fc-list-heading-main { float: left; }
